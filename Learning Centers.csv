@@ -1,0 +1,48 @@
+sr.no,name,address,lattitude ,longitude ,phone number ,node ,District,website 
+1,"Anantrao Pawar College of Engineering and Research (APCOER), Parvati, Pune","S. No. 103, Shahu College Road, Laxminagar, Parvati, Pune - 411009, Maharashtra, India",18.49071249,73.84341068,,Pune,Pune,
+2,"Zeal College of Engineering and Research, Narhe, Pune","Survey No. 39, Narhe-Dhayari Road, Narhe, Pune - 411041, Maharashtra, India",18.44878871,73.82619246,,Pune,Pune,
+3,"Sinhgad Institute of Technology and Science (SITS), Narhe, Pune","49/1, Off Mumbai-Bangalore Bypass, Narhe, Pune - 411041, Maharashtra, India",18.45550961,73.81808747,,Pune,Pune,https://cms.sinhgad.edu/sinhgad_engineering_institutes/sits_narhetechnicalcampus/sits_nt_aboutus.aspx
+4,"Smt. Kashibai Navale College of Engineering (SKNCOE), Vadgaon (Bk), Pune","Survey No. 44/1, Off Sinhgad Road, Vadgaon (Bk), Pune - 411041, Maharashtra, India",18.46656276,73.83660128,,Pune,Pune,
+5," Smt. Kashibai Navale College of Pharmacy (SKNCOP), Kondhwa, Pune","S. No. 40/4 A, Kondhwa-Saswad Road, Kondhwa (Bk), Pune - 411048, Maharashtra, India",18.44139328,73.8956553,,Pune,Pune,
+6,"Bhivarabai Sawant Institute of Technology and Research (BSIOTR), Wagholi, Pune","Gate No. 720/2, Nagar Road, Wagholi, Pune - 412207, Maharashtra, India",18.58648448,74.00456576,,Pune,Pune,https://jspmbsiotr.edu.in/
+7,"Jayawantrao Sawant College of Engineering (JSCOE), Hadapsar, Pune","Survey No. 58, Indrayani Nagar, Handewadi Road, Hadapsar, Pune - 411028, Maharashtra, India",18.47283584,73.93618804,,Pune,Pune,
+8," PES Modern College of Engineering (PESMCOE), JM Road, Pune","1186/A, Off J.M. Road, Shivajinagar, Pune - 411005, Maharashtra, India",18.52636095,73.84700395,,Pune,Pune,https://moderncoe.edu.in/
+9,"Sanjivani College of Engineering (SRES), Kopargaon","Sahajanand Nagar, Kopargaon, Ahmednagar - 423603, Maharashtra, India",19.90049466,74.49490303,,Kopargaon,Ahilyanagar,http://sanjivanicoe.org.in/
+10,"Pravara Rural Engineering College (PREC), Loni","Loni, Tal: Rahata, Dist: Ahmednagar - 413736, Maharashtra, India",19.57724596,74.44555738,,Loni,Ahilyanagar,http://www.pravaraengg.org.in/
+11,"Amrutvahini College of Engineering (AVCOE), Sangamner","Near, Pune - Nashik Hwy, Sangamner, Ghulewadi, Maharashtra 422608",19.61411904,74.18549411,,Sangamner,Ahilyanagar,http://www.avcoe.org/
+12,"NBN Sinhgad School of Engineering, Ambegaon, Pune","S. No. 10/1, Ambegaon (Bk.), Off Sinhgad Road, Pune – 411041, Maharashtra, India",18.46269659,73.8359352,,Pune,Pune,http://nbnstic.sinhgad.edu/
+13,"Ajeenkya DY Patil University (ADYPU), Lohgaon, Pune","DY Patil Knowledge City, Charholi Bk. Via Lohgaon, Pune - 412105, Maharashtra, India",18.62291049,73.91168855,,Pune,Pune,https://adypu.edu.in/
+14,"Sinhgad College of Engineering (SCOE), Vadgaon, Pune","Survey No. 44/1, Vadgaon (Bk), Off Sinhgad Road, Pune - 411041, Maharashtra, India",18.46797718,73.83715951,,Pune,Pune,http://www.sinhgad.edu/
+15,"Sandeep Institute of Engineering and Management (SIEM), Nashik","Trimbak Road, Mahiravani, Nashik - 422213, Maharashtra, India",19.96187807,73.66866899,,Nashik,Nashik,https://siem.sandipfoundation.org/
+16,"MET's Institute of Engineering, Bhujbal Knowledge City, Nashik","Bhujbal Knowledge City, Adgaon, Nashik - 422003, Maharashtra, India",20.0414915,73.85056513,,Nashik,Nashik,http://www.metbhujbalknowledgecity.ac.in/
+17,"Gokhale Education Society’s Sir Dr. M.S. Gosavi Polytechnic Institute, Nashik","Prin. T.A. Kulkarni Vidyanagar, College Road, Nashik - 422005, Maharashtra, India",19.95693194,73.829906,,Nashik,Nashik,http://www.gespoly.org/
+18," Pimpri Chinchwad College of Engineering and Research (PCCOER), Ravet, Pune","Plot No. B, Sector No. 110, Gate No.1, Laxminagar, Ravet, Haveli, Pune - 412101, Maharashtra, India",18.65051145,73.74538316,,Pune,Pune,https://www.pccoer.com/
+19,"Dhole Patil College of Engineering, Wagholi, Pune","1284, Ubale Nagar, Wagholi, Pune - 412207, Maharashtra, India",18.5550431,73.96178717,,Pune,Pune,https://dpcoepune.edu.in/
+20,"Shri Ramchandra College of Engineering, Pune","Gate No. 351/333-1, Pune-Nagar Road, Bakori Phata, Wagholi, Pune - 412216, Maharashtra, India",18.59832879,74.02118948,,Pune,Pune,http://www.srespune.org/
+21,"Rani Laxmibai Girls' Military School, Pune"," Gut No.80 K, Kasaramboli, Post-Pirangut, Mulshi, Pune - 412115, Maharashtra, India",18.51762382,73.66286962,,Pune,Pune,https://rlmss.mespune.in/
+22,"Nashik District Maratha Vidya Prasarak Samaj’s College of Engineering, Nashik","Udoji Maratha Boarding Campus, Near Pumping Station, Gangapur Road, Nashik - 422013, Maharashtra, India",20.01522224,73.76609081,,Nashik,Nashik,https://rsmpoly.org/
+23,"Matoshri College of Engineering and Research Centre, Eklahare, Nashik","Eklahareshivar, Near Odhagaon, Opp. Nashik-Aurangabad Highway, Nashik - 422105, Maharashtra, India",19.99043217,73.91092414,,Nashik,Nashik,https://engg.matoshri.edu.in/
+24,"Smt. Kashibai Navale College of Architecture, Pune","S.No. 10/Part, Ambegaon (Bk), Pune - 411041, Maharashtra, India",18.4641887,73.83664631,,Pune,Pune,http://www.sinhgad.edu/sinhgadInstitutes-2013/Inner-pages/SinhgadInstitutes_SKNCOA.html
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
