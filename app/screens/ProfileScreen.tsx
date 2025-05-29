@@ -5,7 +5,7 @@ import LoginScreen from '../components/auth/LoginScreen';
 import SignupScreen from '../components/auth/SignupScreen';
 import UserProfileScreen from '../components/auth/UserProfileScreen';
 import { COLORS } from '../constants/theme';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/FirebaseAuthContext';
 
 const ProfileScreen = () => {
   const { user, isLoading } = useAuth();

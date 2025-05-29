@@ -2,7 +2,7 @@ import { NavigationIndependentTree } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SplashScreen from './components/SplashScreen';
-import { AuthProvider } from './context/AuthContext';
+import { FirebaseAuthProvider } from './context/FirebaseAuthContext';
 import { TabNavigator } from './navigation/TabNavigator';
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <AuthProvider>
+      <FirebaseAuthProvider>
         {!isSplashComplete ? (
           <SplashScreen onAnimationComplete={handleSplashComplete} />
         ) : (
@@ -22,7 +22,7 @@ export default function App() {
             <TabNavigator />
           </NavigationIndependentTree>
         )}
-      </AuthProvider>
+      </FirebaseAuthProvider>
     </SafeAreaProvider>
   );
 }
