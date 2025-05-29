@@ -1,11 +1,8 @@
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { BlurView } from 'expo-blur';
+import { Ionicons } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
 import {
     ActivityIndicator,
     Alert,
-    Dimensions,
     KeyboardAvoidingView,
     Modal,
     Platform,
@@ -337,19 +334,13 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ onToggleMode }) => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <LinearGradient
-        colors={['rgba(103, 58, 183, 0.8)', 'rgba(33, 150, 243, 0.9)']}
-        style={styles.background}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      />
       <ScrollView 
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        <BlurView intensity={80} tint="light" style={styles.formContainer}>
+        <View style={styles.formContainer}>
           <Text style={styles.title}>Create Account</Text>
-          <Text style={styles.subtitle}>Join the 3D learning revolution</Text>
+          <Text style={styles.subtitle}>Sign up to join 3D Shikshan</Text>
 
           {/* Full Name */}
           <View style={styles.inputContainer}>
@@ -563,21 +554,11 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ onToggleMode }) => {
             onPress={handleSignup}
             disabled={isLoading}
           >
-            <LinearGradient
-              colors={['#673AB7', '#2196F3']}
-              style={styles.buttonGradient}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 0 }}
-            >
-              {isLoading ? (
-                <ActivityIndicator color={COLORS.white} />
-              ) : (
-                <>
-                  <Text style={styles.signupButtonText}>Create Account</Text>
-                  <MaterialCommunityIcons name="arrow-right" size={20} color={COLORS.white} />
-                </>
-              )}
-            </LinearGradient>
+            {isLoading ? (
+              <ActivityIndicator color={COLORS.white} />
+            ) : (
+              <Text style={styles.signupButtonText}>Create Account</Text>
+            )}
           </TouchableOpacity>
 
           {/* Login Link */}
@@ -587,7 +568,7 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ onToggleMode }) => {
               <Text style={styles.loginLink}>Login</Text>
             </TouchableOpacity>
           </View>
-        </BlurView>
+        </View>
       </ScrollView>
 
       {/* Modals */}
@@ -597,41 +578,30 @@ const SignupScreen: React.FC<SignupScreenProps> = ({ onToggleMode }) => {
   );
 };
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  background: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
+    backgroundColor: COLORS.background,
   },
   scrollContent: {
     flexGrow: 1,
-    paddingVertical: height * 0.05,
-    paddingHorizontal: SPACING.lg,
+    paddingBottom: SPACING.xl,
   },
   formContainer: {
+    flex: 1,
     padding: SPACING.lg,
-    borderRadius: BORDER_RADIUS.lg,
-    overflow: 'hidden',
+    justifyContent: 'center',
   },
   title: {
     fontSize: FONT_SIZES.xl,
     fontWeight: 'bold',
     color: COLORS.text,
     marginBottom: SPACING.xs,
-    textAlign: 'center',
   },
   subtitle: {
     fontSize: FONT_SIZES.md,
     color: COLORS.textSecondary,
     marginBottom: SPACING.xl,
-    textAlign: 'center',
   },
   inputContainer: {
     marginBottom: SPACING.md,
@@ -640,38 +610,28 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.sm,
     color: COLORS.text,
     marginBottom: SPACING.xs,
-    fontWeight: '600',
-    marginLeft: SPACING.xs,
+    fontWeight: '500',
   },
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: COLORS.card,
     borderRadius: BORDER_RADIUS.md,
     borderWidth: 1,
-    borderColor: 'rgba(200, 200, 200, 0.3)',
+    borderColor: 'transparent',
     paddingHorizontal: SPACING.md,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 2,
+    minHeight: 50,
   },
   dropdownWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: COLORS.card,
     borderRadius: BORDER_RADIUS.md,
     borderWidth: 1,
-    borderColor: 'rgba(200, 200, 200, 0.3)',
+    borderColor: 'transparent',
     paddingHorizontal: SPACING.md,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 2,
-    minHeight: 50,
+    height: 50,
   },
   dropdownText: {
     flex: 1,
@@ -697,29 +657,23 @@ const styles = StyleSheet.create({
     color: COLORS.error,
     fontSize: FONT_SIZES.xs,
     marginTop: SPACING.xs,
-    marginLeft: SPACING.xs,
   },
   signupButton: {
+    backgroundColor: COLORS.primary,
     borderRadius: BORDER_RADIUS.md,
-    overflow: 'hidden',
-    marginVertical: SPACING.lg,
-  },
-  buttonGradient: {
     paddingVertical: SPACING.md,
-    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: SPACING.md,
+    marginBottom: SPACING.lg,
   },
   signupButtonText: {
     color: COLORS.white,
     fontSize: FONT_SIZES.md,
     fontWeight: 'bold',
-    marginRight: SPACING.xs,
   },
   loginContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: SPACING.md,
   },
   loginText: {
     color: COLORS.textSecondary,

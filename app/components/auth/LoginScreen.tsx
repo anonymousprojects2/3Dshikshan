@@ -1,19 +1,15 @@
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { BlurView } from 'expo-blur';
+import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
     ActivityIndicator,
     Alert,
-    Image,
     KeyboardAvoidingView,
     Platform,
     StyleSheet,
     Text,
     TextInput,
     TouchableOpacity,
-    View,
-    Dimensions
+    View
 } from 'react-native';
 import { BORDER_RADIUS, COLORS, FONT_SIZES, SPACING } from '../../constants/theme';
 import { useAuth } from '../../context/FirebaseAuthContext';
@@ -74,30 +70,14 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onToggleMode }) => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <LinearGradient
-        colors={['rgba(103, 58, 183, 0.8)', 'rgba(33, 150, 243, 0.9)']}
-        style={styles.background}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      />
-      
-      <View style={styles.logoContainer}>
-        <Image 
-          source={require('../../../assets/icon.png')} 
-          style={styles.logo}
-          resizeMode="contain"
-        />
-        <Text style={styles.appName}>3D Shikshan</Text>
-      </View>
-      
-      <BlurView intensity={80} tint="light" style={styles.formContainer}>
+      <View style={styles.formContainer}>
         <Text style={styles.title}>Welcome Back</Text>
-        <Text style={styles.subtitle}>Sign in to continue your learning journey</Text>
+        <Text style={styles.subtitle}>Sign in to continue to 3D Shikshan</Text>
 
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Email</Text>
           <View style={[styles.inputWrapper, emailError ? styles.inputError : null]}>
-            <MaterialCommunityIcons name="email-outline" size={22} color={COLORS.primary} style={styles.inputIcon} />
+            <Ionicons name="mail-outline" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
             <TextInput
               style={styles.input}
               placeholder="Enter your email"
@@ -117,7 +97,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onToggleMode }) => {
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Password</Text>
           <View style={[styles.inputWrapper, passwordError ? styles.inputError : null]}>
-            <MaterialCommunityIcons name="lock-outline" size={22} color={COLORS.primary} style={styles.inputIcon} />
+            <Ionicons name="lock-closed-outline" size={20} color={COLORS.textSecondary} style={styles.inputIcon} />
             <TextInput
               style={styles.input}
               placeholder="Enter your password"
@@ -133,10 +113,10 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onToggleMode }) => {
               style={styles.passwordToggle}
               onPress={() => setShowPassword(!showPassword)}
             >
-              <MaterialCommunityIcons
+              <Ionicons
                 name={showPassword ? 'eye-off-outline' : 'eye-outline'}
-                size={22}
-                color={COLORS.primary}
+                size={20}
+                color={COLORS.textSecondary}
               />
             </TouchableOpacity>
           </View>
@@ -152,21 +132,11 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onToggleMode }) => {
           onPress={handleLogin}
           disabled={isLoading}
         >
-          <LinearGradient
-            colors={['#673AB7', '#2196F3']}
-            style={styles.buttonGradient}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-          >
-            {isLoading ? (
-              <ActivityIndicator color={COLORS.white} />
-            ) : (
-              <>
-                <Text style={styles.loginButtonText}>Login</Text>
-                <MaterialCommunityIcons name="arrow-right" size={20} color={COLORS.white} />
-              </>
-            )}
-          </LinearGradient>
+          {isLoading ? (
+            <ActivityIndicator color={COLORS.white} />
+          ) : (
+            <Text style={styles.loginButtonText}>Login</Text>
+          )}
         </TouchableOpacity>
 
         <View style={styles.signupContainer}>
@@ -175,65 +145,20 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ onToggleMode }) => {
             <Text style={styles.signupLink}>Sign Up</Text>
           </TouchableOpacity>
         </View>
-        
-        <View style={styles.orContainer}>
-          <View style={styles.divider} />
-          <Text style={styles.orText}>OR</Text>
-          <View style={styles.divider} />
-        </View>
-        
-        <View style={styles.socialLoginContainer}>
-          <TouchableOpacity style={styles.socialButton}>
-            <MaterialCommunityIcons name="google" size={24} color="#DB4437" />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.socialButton}>
-            <MaterialCommunityIcons name="facebook" size={24} color="#4267B2" />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.socialButton}>
-            <MaterialCommunityIcons name="apple" size={24} color="#000000" />
-          </TouchableOpacity>
-        </View>
-      </BlurView>
+      </View>
     </KeyboardAvoidingView>
   );
 };
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  background: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-  },
-  logoContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: height * 0.08,
-    marginBottom: height * 0.02,
-  },
-  logo: {
-    width: 80,
-    height: 80,
-  },
-  appName: {
-    fontSize: FONT_SIZES.xl,
-    fontWeight: 'bold',
-    color: COLORS.white,
-    marginTop: SPACING.sm,
-    letterSpacing: 1,
+    backgroundColor: COLORS.background,
   },
   formContainer: {
-    margin: SPACING.lg,
-    padding: SPACING.lg,
-    borderRadius: BORDER_RADIUS.lg,
-    overflow: 'hidden',
     flex: 1,
+    padding: SPACING.lg,
+    justifyContent: 'center',
   },
   title: {
     fontSize: FONT_SIZES.xl,
@@ -253,22 +178,16 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.sm,
     color: COLORS.text,
     marginBottom: SPACING.xs,
-    fontWeight: '600',
-    marginLeft: SPACING.xs,
+    fontWeight: '500',
   },
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: COLORS.card,
     borderRadius: BORDER_RADIUS.md,
     borderWidth: 1,
-    borderColor: 'rgba(200, 200, 200, 0.3)',
+    borderColor: 'transparent',
     paddingHorizontal: SPACING.md,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
-    elevation: 2,
   },
   inputError: {
     borderColor: COLORS.error,
@@ -289,7 +208,6 @@ const styles = StyleSheet.create({
     color: COLORS.error,
     fontSize: FONT_SIZES.xs,
     marginTop: SPACING.xs,
-    marginLeft: SPACING.xs,
   },
   forgotPassword: {
     alignSelf: 'flex-end',
@@ -298,29 +216,22 @@ const styles = StyleSheet.create({
   forgotPasswordText: {
     color: COLORS.primary,
     fontSize: FONT_SIZES.sm,
-    fontWeight: '600',
   },
   loginButton: {
+    backgroundColor: COLORS.primary,
     borderRadius: BORDER_RADIUS.md,
-    overflow: 'hidden',
-    marginVertical: SPACING.lg,
-  },
-  buttonGradient: {
     paddingVertical: SPACING.md,
-    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginBottom: SPACING.lg,
   },
   loginButtonText: {
     color: COLORS.white,
     fontSize: FONT_SIZES.md,
     fontWeight: 'bold',
-    marginRight: SPACING.xs,
   },
   signupContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: SPACING.lg,
   },
   signupText: {
     color: COLORS.textSecondary,
@@ -331,39 +242,6 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.sm,
     fontWeight: 'bold',
   },
-  orContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: SPACING.lg,
-  },
-  divider: {
-    flex: 1,
-    height: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-  },
-  orText: {
-    color: COLORS.textSecondary,
-    fontSize: FONT_SIZES.sm,
-    marginHorizontal: SPACING.md,
-  },
-  socialLoginContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  socialButton: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginHorizontal: SPACING.sm,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.5,
-    elevation: 2,
-  },
 });
 
-export default LoginScreen;
+export default LoginScreen; 
